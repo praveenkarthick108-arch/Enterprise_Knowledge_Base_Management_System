@@ -35,7 +35,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.get('/api/health', async (req, res) => {
   try {
     await sequelize.authenticate();
-    res.json({ success: true, message: 'Enterprise KB API is running', version: '1.0.0', database: 'connected' });
+    res.json({ success: true, message: 'Enterprise KB API is running', version: '2.0.0', database: 'connected' });
   } catch (err) {
     res.status(503).json({ success: false, message: 'Database connection failed' });
   }
@@ -54,6 +54,7 @@ app.use('/api/bookmarks', require('./src/routes/bookmarks'));
 app.use('/api/attachments', require('./src/routes/attachments'));
 app.use('/api/search', require('./src/routes/search'));
 app.use('/api/analytics', require('./src/routes/analytics'));
+app.use('/api/reporting', require('./src/routes/reporting'));
 
 // Error handling
 app.use(notFound);

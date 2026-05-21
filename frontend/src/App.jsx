@@ -21,6 +21,7 @@ import UserManagementPage from './pages/UserManagementPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import ProfilePage from './pages/ProfilePage';
 import MyArticlesPage from './pages/MyArticlesPage';
+import ReportingDashboardPage from './pages/ReportingDashboardPage';
 
 const ProtectedRoute = ({ children, roles }) => {
   const { user, accessToken } = useAuthStore();
@@ -61,6 +62,7 @@ export default function App() {
           <Route path="bookmarks" element={<BookmarksPage />} />
           <Route path="users" element={<ProtectedRoute roles={['admin']}><UserManagementPage /></ProtectedRoute>} />
           <Route path="analytics" element={<ProtectedRoute roles={['admin', 'reviewer']}><AnalyticsPage /></ProtectedRoute>} />
+          <Route path="reports" element={<ProtectedRoute roles={['admin', 'reviewer']}><ReportingDashboardPage /></ProtectedRoute>} />
           <Route path="profile" element={<ProfilePage />} />
         </Route>
 

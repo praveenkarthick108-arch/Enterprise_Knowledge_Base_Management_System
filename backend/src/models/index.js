@@ -31,6 +31,13 @@ const ArticleVersion = require('./ArticleVersion')(sequelize);
 const SearchLog = require('./SearchLog')(sequelize);
 const ArticleView = require('./ArticleView')(sequelize);
 
+// ETL / Reporting models (Phase 2)
+const EtlRunLog = require('./EtlRunLog')(sequelize);
+const EtlArticleAnalytic = require('./EtlArticleAnalytic')(sequelize);
+const EtlCategoryTrend = require('./EtlCategoryTrend')(sequelize);
+const EtlSearchKeyword = require('./EtlSearchKeyword')(sequelize);
+const EtlAuthorActivity = require('./EtlAuthorActivity')(sequelize);
+
 // Associations
 Role.hasMany(User, { foreignKey: 'role_id' });
 User.belongsTo(Role, { foreignKey: 'role_id', as: 'role' });
@@ -97,5 +104,11 @@ module.exports = {
   ApprovalHistory,
   ArticleVersion,
   SearchLog,
-  ArticleView
+  ArticleView,
+  // ETL / Reporting (Phase 2)
+  EtlRunLog,
+  EtlArticleAnalytic,
+  EtlCategoryTrend,
+  EtlSearchKeyword,
+  EtlAuthorActivity,
 };

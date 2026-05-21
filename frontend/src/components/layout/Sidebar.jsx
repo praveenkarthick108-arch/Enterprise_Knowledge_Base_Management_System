@@ -46,6 +46,7 @@ export default function Sidebar({ open, onToggle }) {
     { to: '/tags', icon: TagIcon, label: 'Tags', roles: ['admin', 'author'] },
     { to: '/users', icon: UsersIcon, label: 'Users', roles: ['admin'] },
     { to: '/analytics', icon: ChartBarIcon, label: 'Analytics', roles: ['admin', 'reviewer'] },
+    { to: '/reports',   icon: ChartBarIcon, label: 'ETL Reports', roles: ['admin', 'reviewer'] },
     { to: '/profile', icon: UserCircleIcon, label: 'Profile', roles: null },
   ];
 

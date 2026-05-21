@@ -100,6 +100,16 @@ export const analyticsApi = {
   getActiveUsers: () => apiClient.get('/analytics/users/active'),
 };
 
+// Reporting / ETL (Phase 2)
+export const getReportingSummary  = () => apiClient.get('/reporting/summary').then(r => r.data);
+export const getEtlStatus         = () => apiClient.get('/reporting/etl-status').then(r => r.data);
+export const getTopArticles       = (limit = 20) => apiClient.get('/reporting/top-articles', { params: { limit } }).then(r => r.data);
+export const getCategoryTrends    = () => apiClient.get('/reporting/category-trends').then(r => r.data);
+export const getSearchKeywords    = (limit = 30) => apiClient.get('/reporting/search-keywords', { params: { limit } }).then(r => r.data);
+export const getAuthorActivity    = () => apiClient.get('/reporting/author-activity').then(r => r.data);
+export const getEtlHistory        = (limit = 10) => apiClient.get('/reporting/etl-history', { params: { limit } }).then(r => r.data);
+export const triggerEtlRun        = () => apiClient.post('/reporting/trigger-etl').then(r => r.data);
+
 // Users
 export const userApi = {
   getAll: (params) => apiClient.get('/users', { params }),
