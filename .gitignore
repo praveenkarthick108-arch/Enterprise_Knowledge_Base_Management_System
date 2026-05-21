@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build output
+frontend/dist/
+
+# Claude Code internal
+.claude/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+
+Enterprise_Knowledge_Base_Management_System_Phase2.docx
+Info.txt
+Phase 1 - Enterprise Knowledge Base Management System.docx
+Phase2_Common_Instructions.docx
